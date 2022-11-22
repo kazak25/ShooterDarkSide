@@ -6,8 +6,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-   
-    
+
+    [SerializeField] private PlayerMovement _player;
     private GameObject _gun;
     [SerializeField] private Vector3 _offset;
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class CameraMovement : MonoBehaviour
     {
         transform.position = _gun.transform.position + _offset;
     }
+   
 
   
 }

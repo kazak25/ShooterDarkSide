@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
         {
             _animator.SetTrigger("Go");
         }
+        
+        
 
          
         var vertical = Input.GetAxis("Vertical");
