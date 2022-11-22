@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
             var newEnemy = Instantiate(_enemyController);
             newEnemy.Initialize(_controller);
             _spawnedEnemy.Add(newEnemy);
-            newEnemy.transform.position = new Vector3(Random.Range(10,11), 8f, Random.Range(71,72));
+            newEnemy.transform.position = new Vector3(Random.Range(10,15), 4f, Random.Range(71,77));
             newEnemy.EnemyDiedEvent += DecreaseEnemiesCount;
         }
     }
