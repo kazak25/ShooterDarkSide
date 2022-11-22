@@ -11,6 +11,6 @@ public class GameManager : MonoBehaviour
 
    private void Awake()
    {
-      _camera.Initialize(_weaponView);
+     // _camera.Initialize(_weaponView);
    }
 }

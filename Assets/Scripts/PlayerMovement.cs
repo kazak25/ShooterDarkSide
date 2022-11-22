@@ -41,10 +41,5 @@ public class PlayerMovement : MonoBehaviour
         
         
     }
-
-    public void ChangeRadius()
-    {
-        _character.radius = 0.3f;
-        transform.Rotate(-40,71,-5);
-    }
+    
 }
