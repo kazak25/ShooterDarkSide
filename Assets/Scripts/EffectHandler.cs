@@ -5,16 +5,17 @@ using UnityEngine;
 public class EffectHandler : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] public ParticleSystem _blood;
+    [SerializeField]  ParticleSystem _blood;
 
     private float hitEffectDuration = 3f;
-   // [SerializeField] public ParticleSystem _fire;
+    [SerializeField]  ParticleSystem _fire;
+    [SerializeField] GameObject _weaponFire;
     
 
     public void ShowEffectBlood(Vector3 hitPosition, Vector3 normal)
     {
         var hiteffect = Instantiate(_blood, hitPosition, Quaternion.LookRotation(normal));
-        _blood.Play();
+        hiteffect.Play();
        
     }
 
@@ -23,10 +24,10 @@ public class EffectHandler : MonoBehaviour
         yield return new WaitForSeconds(time);
         Destroy(effect); //
     }
-    // public void ShowEffectFire(Vector3 hitPosition, Vector3 normal)
-    // {
-    //     var hiteffect = Instantiate(_fire, hitPosition, Quaternion.LookRotation(normal));
-    //     _fire.Play();
-    // }
+    public void ShowEffectFire()
+    {
+        var fire = Instantiate(_fire, _weaponFire.transform);
+        fire.Play();
+    }
     
 }
