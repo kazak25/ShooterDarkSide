@@ -15,11 +15,11 @@ public class EnemyController : MonoBehaviour
     public Action EnemyDiedEvent;
 
     private float _speed = 2;
-    private PlayerMovement _controller;
+    private PlayerController _controller;
 
 
     [UsedImplicitly]
-    public void Initialize(PlayerMovement enemyController)
+    public void Initialize(PlayerController enemyController)
     {
         _controller = enemyController;
     }

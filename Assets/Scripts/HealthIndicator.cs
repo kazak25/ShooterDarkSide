@@ -14,6 +14,8 @@ public class HealthIndicator : MonoBehaviour
     [SerializeField]
     private GameObject _fillArea;
 
+    [SerializeField] private Animator _animator;
+
     private float _currentHealth;
     private float _maxHealth;
 
@@ -30,6 +32,7 @@ public class HealthIndicator : MonoBehaviour
         if (_healthBar.value <= 0)
         {
             _fillArea.SetActive(false);
+            _animator.SetBool("PlayerDied",true);
         }
     }
 }

@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class EnemySpawner : MonoBehaviour
 {
   [SerializeField]  private EnemyController _enemyController;
-    [SerializeField] private PlayerMovement _controller;
+    [SerializeField] private PlayerController _controller;
     
     public UnityEvent DecreaseEnemiesEvent;
     
