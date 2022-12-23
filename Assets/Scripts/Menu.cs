@@ -2,8 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GunSelect : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     [SerializeField] private Guns[] _guns;
 
@@ -11,6 +12,7 @@ public class GunSelect : MonoBehaviour
 
     private void Awake()
     {
+        
         ShowGun(0);
     }
 
@@ -40,5 +42,11 @@ public class GunSelect : MonoBehaviour
         _guns[index].gameObject.SetActive(true);
 
     }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadSceneAsync("Shooter");
+    }
+    
     
 }

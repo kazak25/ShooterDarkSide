@@ -1,18 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Guns : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] public Muzzle _muzzle ;
+
+    private void Awake()
     {
-        
+        _muzzle.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public float AmmoCount()
     {
-        
+        return _muzzle._ammoCount;
+    }
+
+    public void SetActiveMuzzle()
+    {
+        _muzzle.gameObject.SetActive(true);
     }
 }

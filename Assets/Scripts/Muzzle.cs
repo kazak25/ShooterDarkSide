@@ -6,23 +6,16 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Weapon : MonoBehaviour
+public class Muzzle : MonoBehaviour
 {
-    
     [SerializeField] private float _speedBullet = 38f;
-    [SerializeField]public float _ammoCount=20;
+    [SerializeField] public float _ammoCount = 20;
     [SerializeField] private BulletBehavior _bullet;
-    //private EffectHandler _effect;
+
+
     
 
-    public UnityEvent<float> ShootingEvent;
-    
     private float _shotCount = 1;
-
-    // public void Initialize(EffectHandler effect)
-    // {
-    //     _effect = effect;
-    // }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -31,10 +24,14 @@ public class Weapon : MonoBehaviour
             {
                 return;
             }
-            var bullet = Instantiate(_bullet, transform.position, transform.rotation);
+
+            var bullet = Instantiate(_bullet,transform.position, transform.rotation);
             bullet.GetComponent<Rigidbody>().velocity = transform.forward * _speedBullet;
-            ShootingEvent.Invoke(_shotCount);
-            //_effect.ShowEffectFire();
         }
+    }
+
+    public float AmmoCount()
+    {
+        return _ammoCount;
     }
 }

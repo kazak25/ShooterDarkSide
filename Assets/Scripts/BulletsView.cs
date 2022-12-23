@@ -10,12 +10,12 @@ public class BulletsView : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
     
-    private Weapon _weapon;
+    private Muzzle _weapon;
     private float _bulletCount;
     
     
   //  private float _bulletCount = 20;
-  public void Initialize(Weapon weapon)
+  public void Initialize(Muzzle weapon)
   {
       _weapon = weapon;
   }

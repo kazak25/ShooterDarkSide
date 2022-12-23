@@ -16,10 +16,16 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+       
+        
         var x = Input.GetAxis("Horizontal");
         var z = Input.GetAxis("Vertical");
 
         var isRunning = Mathf.Abs(x) > 0 || Mathf.Abs(z) > 0;
+        if (z<0)
+        {
+            return;
+        }
         
 
         if (!isRunning)
@@ -55,6 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetInteger("Speed",0);
         }
+        
         
         
         

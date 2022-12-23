@@ -7,12 +7,12 @@ public class CanvasManager : MonoBehaviour
 {
     [SerializeField] private BulletsView _bulletsView;
     [SerializeField] private EnemiesView _enemiesView;
-    [SerializeField] private Weapon weapon;
     [SerializeField] private EnemySpawner _enemySpawner;
     
     private void Awake()
     {
-        _bulletsView.Initialize(weapon);
+        var muzzle = FindObjectOfType<Muzzle>();
+        _bulletsView.Initialize(muzzle);
         _enemiesView.Initialize(_enemySpawner);
     }
 
