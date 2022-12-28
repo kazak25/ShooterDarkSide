@@ -6,6 +6,7 @@ using UnityEngine;
 public class Guns : MonoBehaviour
 {
     [SerializeField] public Muzzle _muzzle ;
+    [SerializeField] public Guns _prefab;
 
     private void Awake()
     {

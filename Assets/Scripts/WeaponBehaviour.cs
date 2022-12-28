@@ -16,13 +16,19 @@ public class WeaponBehaviour : MonoBehaviour
 
     private float _ammoCount;
     // Start is called before the first frame update
-    private void Awake()
+   
+
+    private void Start()
     {
+        var selectedWeaponHandler = FindObjectOfType<SelectedWeaponHandler>();
+        var selectedWeapon = selectedWeaponHandler.GetLastWeapon();
+        var weapon = Instantiate(selectedWeapon);
         _gun = FindObjectOfType<Guns>();
         // var _rigibody = _guns.GetComponent<Rigidbody>();
         // _rigibody.isKinematic = true;
-      _gun.transform.SetParent(_target);
-        _gun.transform.position = _target.position;
+       
+      weapon.transform.SetParent(_target);
+        weapon.transform.position = _target.position;
         _gun.SetActiveMuzzle();
     }
 

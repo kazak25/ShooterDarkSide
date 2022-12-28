@@ -9,11 +9,15 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private EnemiesView _enemiesView;
     [SerializeField] private EnemySpawner _enemySpawner;
     
-    private void Awake()
+    private void Start()
     {
         var muzzle = FindObjectOfType<Muzzle>();
         _bulletsView.Initialize(muzzle);
-        _enemiesView.Initialize(_enemySpawner);
+        
     }
 
+    private void Awake()
+    {
+        _enemiesView.Initialize(_enemySpawner);
+    }
 }
